@@ -1,6 +1,5 @@
-let emptyField = document.querySelector('input[id=name]');
-  
-const nextField = document.querySelector("input[name=user-name]").focus();
+const nameInput = document.querySelector('input[id=name]');
+const eField = document.querySelector('input[name=user-name]').focus();
 
 
 // this listener will hide the text field 'other job role' if anything besides 'other' is selected
@@ -84,14 +83,20 @@ const email = document.querySelector('input[type=email]');
 const cardNo = document.querySelector('input[id=cc-num]');
 const zip = document.querySelector('input[id=zip]');
 const cvv = document.querySelector('input[id=cvv]');
-const form = document.getElementsByTagName('form')[0];
+const form = document.getElementsByTagName('form');
+
 
 form.addEventListener('submit', () => {
+const nameOutput = nameInput.value;
 
 });
+
+//Create another variable to store the results of testing the name value variable that was just created. Regex will be helpful, 
+//and the regex course from this unit will demonstrate how to do this. 
+//This variable will equal true if the test passes, and false otherwise.
 
 //3. inside the event listener, use the name variable, dot notation, and the value property 
 //to create a new variable that references the value of the “Name” field.
 //I'm at the end of my rope with this one...can't find the answer anywhere.
 //I tried targeting the name variable emptyField and adding .value with many different attempts, it's been more than 8 hours
-//and still no results. wtf am I doing wrong???
+//and still no results. what am I doing wrong???

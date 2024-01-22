@@ -87,16 +87,8 @@ const form = document.getElementsByTagName('form');
 
 
 form.addEventListener('submit', () => {
-const nameOutput = nameInput.value;
+
 
 });
 
-//Create another variable to store the results of testing the name value variable that was just created. Regex will be helpful, 
-//and the regex course from this unit will demonstrate how to do this. 
-//This variable will equal true if the test passes, and false otherwise.
 
-//3. inside the event listener, use the name variable, dot notation, and the value property 
-//to create a new variable that references the value of the “Name” field.
-//I'm at the end of my rope with this one...can't find the answer anywhere.
-//I tried targeting the name variable emptyField and adding .value with many different attempts, it's been more than 8 hours
-//and still no results. what am I doing wrong???

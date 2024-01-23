@@ -83,12 +83,73 @@ const email = document.querySelector('input[type=email]');
 const cardNo = document.querySelector('input[id=cc-num]');
 const zip = document.querySelector('input[id=zip]');
 const cvv = document.querySelector('input[id=cvv]');
-const form = document.getElementsByTagName('form');
+const form = document.getElementById('read');
 
 
-form.addEventListener('submit', () => {
 
+form.addEventListener('submit', (e) => {
+ const isNameValid = () => /^[a-z]+$/.test(nameInput.value);
+ const isEmailValid = () => /^[^@]+@[^@.]+\.[a-z]+$/i.test(email.value);
+ const isCreditLegit = () => /^\d{13,16}$/.test(cardNo.value);
+ const isZipValid = () => /^\d{5}$/.test(zip.value);
+ const isCvvValid = () => /^\d{3}$/.test(cvv.value);
 
+if(isNameValid()) {
+nameInput.closest('label').className = 'valid';
+nameInput.nextElementSibling.style.display = 'none';
+} else {
+  e.preventDefault();
+  nameInput.closest('label').className = 'error';
+  nameInput.nextElementSibling.style.display = 'block';
+}
+if(isEmailValid()) {
+  email.closest('label').className = 'valid';
+  email.nextElementSibling.style.display = 'none';
+  } else {
+    e.preventDefault();
+    email.closest('label').className = 'error';
+    email.nextElementSibling.style.display = 'block';
+  }
+  if(isCreditLegit()) {
+    cardNo.closest('label').className = 'valid';
+    cardNo.nextElementSibling.style.display = 'none';
+    } else {
+      e.preventDefault();
+      cardNo.closest('label').className = 'error';
+      cardNo.nextElementSibling.style.display = 'block';
+    }
+    if(isZipValid()) {
+      zip.closest('label').className = 'valid';
+      zip.nextElementSibling.style.display = 'none';
+      } else {
+        e.preventDefault();
+        zip.closest('label').className = 'error';
+        zip.nextElementSibling.style.display = 'block';
+      }
+      if(isCvvValid()) {
+        cvv.closest('label').className = 'valid';
+        cvv.nextElementSibling.style.display = 'none';
+        } else {
+          e.preventDefault();
+          cvv.closest('label').className = 'error';
+          cvv.nextElementSibling.style.display = 'block';
+        }
 });
-
+ 
+//const validator = (inputElement, validationFunction) => {
+// if(validatorFunction()) {
+//   inputElement.closest('label').className = 'valid';
+//   inputElement.nextElementSibling.style.display = 'none';
+// } else {
+//   e.preventDefault();
+//   inputElement.closest('label').className = 'error';
+//   inputElement.nextElementSibling.style.display = 'block';
+// }
+// };
+// validator(nameInput, isNameValid);
+// validator(email, isEmailValid);
+// validator(cardNo, isCreditLegit);
+// validator(zip, isZipValid);
+// validator(cvv, isCvvValid);
+// });
 

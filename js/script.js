@@ -119,7 +119,7 @@ validator(cvv, isCvvValid);
 for(let i = 0; i < forBox.length; i++) {
   forBox.addEventListener('focus', (e) => {
     
-    
+    //any videos that can help me with this?
       
     });
   };

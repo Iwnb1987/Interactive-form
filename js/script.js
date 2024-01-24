@@ -117,3 +117,14 @@ validator(cvv, isCvvValid);
 
 
  const forBox = checkBox;
+for(let i = 0; i < forBox.length; i++) {
+forBox[i].addEventListener('focus', (e) => {
+forBox[i].classList.add('focus');
+forBox[i].parentElement.classList.add('focus');
+});
+
+forBox[i].addEventListener('blur', (e) => {
+  forBox[i].classList.remove('focus');
+  forBox[i].parentElement.classList.remove('focus');
+  });
+};

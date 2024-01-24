@@ -32,11 +32,12 @@ shade.style.display = 'none';
           });
 
 
-          const checkBox = document.getElementById('activities');
+          const checkBox = document.querySelectorAll('input[type=checkbox]');
+          const checker = document.querySelector('#activities');
           const total = document.getElementById('activities-cost');
 
           let totalCost = 0;
-          checkBox.addEventListener('change',(e) => {
+          checker.addEventListener('change',(e) => {
             let updateCost = parseInt(e.target.getAttribute("data-cost"));
            
                if(!e.target.checked) {
@@ -84,6 +85,7 @@ const cardNo = document.querySelector('input[id=cc-num]');
 const zip = document.querySelector('input[id=zip]');
 const cvv = document.querySelector('input[id=cvv]');
 const form = document.getElementById('read');
+console.log(form);
 
 
 
@@ -111,15 +113,7 @@ validator(cardNo, isCreditLegit);
 validator(zip, isZipValid);
 validator(cvv, isCvvValid);
 });
- 
-//Use the variable that was just created to loop over the activities’ checkboxes.
-//Inside the loop, program each activity to listen for the focus event and the blur event. 
-//These are two separate events and will need to be added and defined separately but within the same loop.
+
+
+
  const forBox = checkBox;
-for(let i = 0; i < forBox.length; i++) {
-  forBox.addEventListener('focus', (e) => {
-    
-    //any videos that can help me with this?
-      
-    });
-  };

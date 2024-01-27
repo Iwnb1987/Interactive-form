@@ -19,21 +19,23 @@
             });
 
 //DOM manipulation Variables
-  const bluePrint = document.querySelector('#design');
+const bluePrint = document.querySelector('#design');
   const shade = document.getElementById('color');
-  const hue = document.querySelectorAll('option[data-theme]');
-  shade.setAttribute('disabled', true);    //disables the color text field
+  shade.children = 0;
+  shade.setAttribute('disabled', true);
 
   bluePrint.addEventListener('change', (e) => { //When a design is selected the color block appears.
-    for (let i = 0; i < hue.length; i++) {  //hue matches i heart JS colors and hides the rest or the opposite
-             if (bluePrint.value !== hue[i].getAttribute('data-theme')) {
-              shade.removeAttribute('disabled');   //removes the setAttribute after a design is selected
-              hue[i].hidden = true;
-              } else {
-                hue[i].hidden = false;
-              }
-              }
-           });       
+   for (let i = 0; i < shade.length; i++) { 
+   const dataShade = shade.value;
+   const dataColor = shade[i].getAttribute('data-theme');
+    if(dataShade === dataColor) {
+      shade[i].hidden = false;
+    } else {
+      shade[i].hidden = true;
+      shade.removeAttribute('disabled');
+    }
+   }
+   });  
           
 
 //DOM Manipulation variables

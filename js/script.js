@@ -19,23 +19,27 @@
             });
 
 //DOM manipulation Variables
-const bluePrint = document.querySelector('#design');
-  const shade = document.getElementById('color');
-  shade.children = 0;
-  shade.setAttribute('disabled', true);
+const bluePrint = document.getElementById('design');
+const hue = document.getElementById('shirt-colors');
+const shade = document.getElementById('color');
+const shadeChildren = shade.querySelectorAll('option[data-theme]');
+shade.setAttribute('disabled', true);
+ 
+bluePrint.addEventListener('change', (e) => {
+  shade.removeAttribute('disabled');
+  for(let i = 0; i < shadeChildren.length; i++) {
+    const dataShade = e.target.value;
+    const dataColor = shadeChildren[i].getAttribute('data-theme');
+ if(dataShade === dataColor) {
+  shadeChildren[i].hidden = false;
+  shadeChildren[i].selected = true;
+ } else {
+   shadeChildren[i].hidden = true;
+   shadeChildren[i].selected = false;
+ }
+  }
 
-  bluePrint.addEventListener('change', (e) => { //When a design is selected the color block appears.
-   for (let i = 0; i < shade.length; i++) { 
-   const dataShade = shade.value;
-   const dataColor = shade[i].getAttribute('data-theme');
-    if(dataShade === dataColor) {
-      shade[i].hidden = false;
-    } else {
-      shade[i].hidden = true;
-      shade.removeAttribute('disabled');
-    }
-   }
-   });  
+});
           
 
 //DOM Manipulation variables

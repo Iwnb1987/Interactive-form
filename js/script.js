@@ -29,10 +29,10 @@ bluePrint.addEventListener('change', (e) => {
   shade.removeAttribute('disabled');
   for(let i = 0; i < shadeChildren.length; i++) {
     const dataShade = e.target.value;
-    const dataColor = shadeChildren[i].getAttribute('data-theme');
- if(dataShade === dataColor) {
-  shadeChildren[i].hidden = false;
-  shadeChildren[i].selected = true;
+    const dataColor = shadeChildren[i].getAttribute('data-theme');  //When the bluePrint variable experienes a change
+ if(dataShade === dataColor) {                                      //it'll check lines 33 and 34 variables match
+  shadeChildren[i].hidden = false;                                  //since they do, when you switch designs, the JS pun theme
+  shadeChildren[i].selected = true;                                 //won't display heart JS themes, vice versa.
  } else {
    shadeChildren[i].hidden = true;
    shadeChildren[i].selected = false;
@@ -43,7 +43,7 @@ bluePrint.addEventListener('change', (e) => {
           
 
 //DOM Manipulation variables
-  const checkBox = document.querySelectorAll('input[type=checkbox]');
+const checkBox = document.querySelectorAll('input[type=checkbox]');
   const checker = document.querySelector('#activities');
   const total = document.getElementById('activities-cost');
 
@@ -66,7 +66,7 @@ const cC = document.querySelector('.credit-card');
 const pay = document.getElementById('paypal').style.display = 'none';
 const payment = document.querySelector('#payment');
 const crypto = document.getElementById('bitcoin').style.display = 'none';
-payment.selectedIndex = 1;  //payment.value = 'credit-card';
+payment.value = 'credit-card';  //the page did refresh after I filled out everything thanks to this line
 
 //this change will display effect the i'm going to pay with drop down menu
 //and hide the credit card tet field if paypal or bitcoin are selected
@@ -138,7 +138,7 @@ forBox[i].addEventListener('blur', (e) => {
     }; 
 
   
-     document.addEventListener('change',(e) => {
+     document.addEventListener('change', (e) => {
      if(e.target.type ==='checkbox') {
         const activityName = e.target.name;
         const activityTimes = e.target.getAttribute("data-day-and-time");
@@ -146,12 +146,11 @@ forBox[i].addEventListener('blur', (e) => {
         for(let i = 0; i < forBox.length; i++) {
           const dayTime = forBox[i].getAttribute("data-day-and-time");
         if(activityTimes === dayTime && activityName !== forBox[i].name) {
-            forBox[i].disabled = true;
-            forBox[i].closest('label').className = 'disabled';
-            //forBox[i].parentElement.className = 'disabled';
-          }
+          forBox[i].disabled = e.target.checked;
+          forBox[i].closest('label').className = e.target.checked? 'disabled': 'enabled'; 
+          //        parentElement.className
+          } 
         }
        }
       });
     
-

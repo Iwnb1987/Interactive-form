@@ -20,7 +20,6 @@
 
 //DOM manipulation Variables
 const bluePrint = document.getElementById('design');
-const hue = document.getElementById('shirt-colors');
 const shade = document.getElementById('color');
 const shadeChildren = shade.querySelectorAll('option[data-theme]');
 shade.setAttribute('disabled', true);

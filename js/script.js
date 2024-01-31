@@ -120,13 +120,12 @@ const validator = (inputElement, validationFunction) => {
       }
       };
       
-    if(payment.value === 'credit-card') {
+    validator(nameInput, isNameValid);  //if nameInput.value matches isNameValid, a green checkmark will appear if you hit enter, etc.
+        validator(email, isEmailValid);
+      if(payment.value === 'credit-card') {
       validator(cardNo, isCreditLegit);
       validator(zip, isZipValid);
       validator(cvv, isCvvValid);
-    } else {
-      validator(nameInput, isNameValid);  //if nameInput.value matches isNameValid, a green checkmark will appear if you hit enter, etc.
-      validator(email, isEmailValid);
     }
     
       });

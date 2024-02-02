@@ -99,7 +99,8 @@ const zip = document.querySelector('input[id=zip]');
 const cvv = document.querySelector('input[id=cvv]');
 const form = document.querySelector('form[method=post]');
 
-//Before you can submit the form, these variables check for validation in the text fields
+//Before you can submit the form, these regular expressions enforce valid ways to write name, email, card, zip, and cvv
+//he following validatorfunction (line 112), will produce an error if the format in the text field isn't matchig with the regEx.
 form.addEventListener('submit', (e) => {
 
  const isNameValid = () => /^[a-zA-Z]+ ?[a-zA-Z]*? ?[a-zA-Z]*?$/.test(nameInput.value); 
@@ -108,7 +109,6 @@ form.addEventListener('submit', (e) => {
  const isZipValid = () => /^\d{5}$/.test(zip.value);
  const isCvvValid = () => /^\d{3}$/.test(cvv.value);
 
-      //This awesome function checks for correct format in the text field 
 const validator = (inputElement, validationFunction) => {
   if(validationFunction()) {
     inputElement.closest('label').className = 'valid';

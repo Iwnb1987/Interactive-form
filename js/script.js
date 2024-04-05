@@ -43,9 +43,7 @@ bluePrint.addEventListener('change', (e) => {
     });
  
 
- 
-
-       //DOM Manipulation variables
+  //DOM Manipulation variables
   const checkBox = document.querySelectorAll('input[type=checkbox]');
   const checker = document.querySelector('#activities');
   const total = document.getElementById('activities-cost');
@@ -99,8 +97,8 @@ const zip = document.querySelector('input[id=zip]');
 const cvv = document.querySelector('input[id=cvv]');
 const form = document.querySelector('form[method=post]');
 
-//Before you can submit the form, these regular expressions enforce valid ways to write name, email, card, zip, and cvv
-//he following validatorfunction (line 112), will produce an error if the format in the text field isn't matchig with the regEx.
+//Before you can submit the form, these regular expressions below enforce valid ways to write name, email, card, zip, and cvv
+//The following validatorfunction (line 112), will produce an error if the format in the text field isn't matchig with the regEx.
 form.addEventListener('submit', (e) => {
 
  const isNameValid = () => /^[a-zA-Z]+ ?[a-zA-Z]*? ?[a-zA-Z]*?$/.test(nameInput.value); 

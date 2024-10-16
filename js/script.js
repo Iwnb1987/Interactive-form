@@ -69,7 +69,7 @@ const payment = document.querySelector('#payment');
 const crypto = document.getElementById('bitcoin').style.display = 'none';
 payment.value = 'credit-card';  //the page refreshes after credit card, name, and email is filled in and submitted
 
-//this change will display effect the i'm going to pay with drop down menu
+//this change will display the "i'm going to pay with" drop down menu
 //and hide the credit card text field if paypal or bitcoin are selected
 payment.addEventListener('change', (e) => {
 const divElement = e.target.value;
